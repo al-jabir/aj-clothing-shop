@@ -1,9 +1,3 @@
-.categories-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 .category-container {
   min-width: 30%;
   height: 240px;
@@ -11,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #da6fea;
+  border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
 
@@ -54,7 +48,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #df49a1;
+    border: 1px solid black;
     background-color: white;
     opacity: 0.7;
     position: absolute;
