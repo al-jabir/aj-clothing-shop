@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 const Navigation = () => {
   return (
     <Fragment>
-      <div>
+      <div className="navigation">
         <h1>I am the Navigation bar</h1>
       </div>
       <Outlet />
