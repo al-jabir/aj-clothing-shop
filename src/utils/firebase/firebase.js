@@ -26,9 +26,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   console.log(userAuth);
 };
 
-export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
-
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (userAuth) => {
@@ -36,3 +33,6 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 
   console.log(userDocRef);
 };
+
+export const auth = getAuth();
+export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
