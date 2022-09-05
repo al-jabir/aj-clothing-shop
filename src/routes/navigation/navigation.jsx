@@ -5,12 +5,12 @@ const Navigation = () => {
   return (
     <Fragment>
       <div className="navigation">
-        <link className="logo-container" to="/">
-          <div className="logo">AJ SHOP</div>
-        </link>
-        <div className="links-container">
-          <Link className="nav-link" to="/shop">
-            SHOP
+        <Link className="logo-link" to="/">
+          <p>Logo</p>
+        </Link>
+        <div className="nav-container">
+          <Link className="nav-links" to="/shop">
+            Shop
           </Link>
         </div>
       </div>
