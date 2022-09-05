@@ -6,6 +6,7 @@ const Navigation = () => {
     <Fragment>
       <div className="navigation">
         <h1>I am the Navigation bar</h1>
+        <p>When will be navbar updated</p>
       </div>
       <Outlet />
     </Fragment>
