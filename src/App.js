@@ -1,4 +1,4 @@
-import Home from "./routes/home";
+import Home from "./routes/home/home";
 
 const App = () => {
   return <Home />;
