@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
+import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyB6T4CmSA0_nwa0ulekVdOqsPsGs5q4ito",
   authDomain: "aj-clothing-shop.firebaseapp.com",
