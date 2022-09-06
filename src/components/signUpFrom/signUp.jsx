@@ -1,21 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
+
+const defaultFormFields = {
+  displyName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 const SignUp = () => {
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { displyName, email, password, confirmPassword } = formFields;
+
+  console.log(formFields);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormFields({ ...formFields, [name]: value });
+  };
+
   return (
     <div>
       <h1>Sign up with your email and password</h1>
       <form onSubmit={() => {}}>
         <label>Display Name</label>
-        <input type="text" required />
+        <input
+          type="text"
+          required
+          onChange={handleChange}
+          name="displyName"
+          value={displyName}
+        />
 
         <label>Email</label>
-        <input type="email" required />
+        <input
+          type="email"
+          required
+          onChange={handleChange}
+          name="email"
+          value={email}
+        />
 
         <label>Password</label>
-        <input type="password" required />
+        <input
+          type="password"
+          required
+          onChange={handleChange}
+          name="password"
+          value={password}
+        />
 
         <label>Confirm Password</label>
-        <input type="password" required />
+        <input
+          type="password"
+          required
+          onChange={handleChange}
+          name="confirmPassword"
+          value={confirmPassword}
+        />
         <button type="submit">SignIn</button>
       </form>
     </div>
