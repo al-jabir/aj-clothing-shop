@@ -19,7 +19,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
+export const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -30,6 +30,7 @@ googleProvider.setCustomParameters({
 export const auth = getAuth();
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
+
 export const signInWithGoogleredirect = () =>
   signInWithRedirect(auth, googleProvider);
 
@@ -38,7 +39,7 @@ export const db = getFirestore();
 export const createUserDocumentFromAuth = async (userAuth) => {
   if (!userAuth) return;
 
-  const userDocRef = doc(db, "users", userAuth.uid);
+  const userDocRef = doc(db, "usersKing", userAuth.uid);
   // console.log(userDocRef);
   const userSnapshot = await getDoc(userDocRef);
   // console.log(userSnapshot);
