@@ -4,7 +4,8 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase";
 import Button from "../button/button";
-import FormInput from "../sign-inputs/FormInput";
+import FormInput from "../Form-inputs/form-Input";
+import "./signup.scss";
 
 const defaultFormFields = {
   displyName: "",
@@ -13,11 +14,10 @@ const defaultFormFields = {
   confirmPassword: "",
 };
 
-const SignUp = () => {
+const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { displyName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
+  const { displayName, email, password, confirmPassword } = formFields;
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -38,7 +38,7 @@ const SignUp = () => {
       );
       console.log(user);
 
-      await createUserDocumentFromAuth(user, { displyName });
+      await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
@@ -55,20 +55,21 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <h1>Sign up with your email and password</h1>
+    <div className="sign-up-container">
+      <h2>Don't have an account?</h2>
+      <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
           type="text"
           required
           onChange={handleChange}
-          name="displyName"
-          value={displyName}
+          name="displayName"
+          value={displayName}
         />
 
         <FormInput
-          label="Display Name"
+          label="Email"
           type="email"
           required
           onChange={handleChange}
@@ -93,10 +94,10 @@ const SignUp = () => {
           name="confirmPassword"
           value={confirmPassword}
         />
-        <Button type="submit">Sign-In</Button>
+        <Button type="submit">Sign Up</Button>
       </form>
     </div>
   );
 };
 
-export default SignUp;
+export default SignUpForm;
