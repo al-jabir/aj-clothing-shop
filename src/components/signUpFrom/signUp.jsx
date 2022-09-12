@@ -12,7 +12,7 @@ const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displyName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
+  // console.log(formFields);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
