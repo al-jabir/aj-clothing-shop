@@ -27,8 +27,8 @@ const SignInForm = () => {
     await createUserDocumentFromAuth(user);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     try {
       const response = await signInAuthUserWithEmailAndPassword(
@@ -51,8 +51,8 @@ const SignInForm = () => {
     }
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
     setFormFields({ ...formFields, [name]: value });
   };

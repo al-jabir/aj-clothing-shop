@@ -8,7 +8,7 @@ import FormInput from "../Form-inputs/form-Input";
 import "./signup.scss";
 
 const defaultFormFields = {
-  displyName: "",
+  displayName: "",
   email: "",
   password: "",
   confirmPassword: "",
