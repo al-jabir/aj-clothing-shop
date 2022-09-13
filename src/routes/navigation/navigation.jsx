@@ -2,17 +2,14 @@ import { Fragment, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as Ajshop } from "../../assets/aj.svg";
 import { userContext } from "../../contexts/userContext";
+import { signOutUser } from "../../utils/firebase/firebase";
 import "./navigation.scss";
-
-import { singOutUser } from "../../utils/firebase/firebase";
-
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(userContext);
   // console.log(currentUser);
 
   const singOutHandler = async () => {
-    await singOutUser();
-
+    await signOutUser();
     setCurrentUser(null);
   };
   return (
