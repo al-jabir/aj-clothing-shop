@@ -5,7 +5,7 @@ import { userContext } from "../../contexts/userContext";
 import "./navigation.scss";
 const Navigation = () => {
   const { currentUser } = useContext(userContext);
-  console.log(currentUser);
+  // console.log(currentUser);
   return (
     <Fragment>
       <div className="navigation">

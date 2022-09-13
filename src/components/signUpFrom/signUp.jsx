@@ -19,6 +19,8 @@ const SignUpForm = () => {
 
   const { displayName, email, password, confirmPassword } = formFields;
 
+  console.log("hit");
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
