@@ -3,9 +3,18 @@ import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as Ajshop } from "../../assets/aj.svg";
 import { userContext } from "../../contexts/userContext";
 import "./navigation.scss";
+
+import { singOutUser } from "../../utils/firebase/firebase";
+
 const Navigation = () => {
-  const { currentUser } = useContext(userContext);
+  const { currentUser, setCurrentUser } = useContext(userContext);
   // console.log(currentUser);
+
+  const singOutHandler = async () => {
+    await singOutUser();
+
+    setCurrentUser(null);
+  };
   return (
     <Fragment>
       <div className="navigation">
@@ -16,9 +25,15 @@ const Navigation = () => {
           <Link className="nav-links" to="/shop">
             Shop
           </Link>
-          <Link className="nav-links" to="/auth">
-            Sign-In
-          </Link>
+          {currentUser ? (
+            <span className="nav-links" onClick={singOutHandler}>
+              SIGN OUT
+            </span>
+          ) : (
+            <Link className="nav-links" to="/auth">
+              SIGN IN
+            </Link>
+          )}
         </div>
       </div>
       <Outlet />

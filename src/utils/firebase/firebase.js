@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signInWithRedirect,
+  signOut,
 } from "firebase/auth";
 
 import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
@@ -19,8 +20,7 @@ const firebaseConfig = {
   appId: "1:144779612794:web:ff7d68352e9644b00b61c3",
 };
 
-// Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
+const firebaseapp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -76,3 +76,5 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const singOutUser = await signOut(auth);
