@@ -1,8 +1,11 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as Ajshop } from "../../assets/aj.svg";
+import { UserContext } from "../../contexts/userContext";
 import "./navigation.scss";
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+  console.log(currentUser);
   return (
     <Fragment>
       <div className="navigation">
