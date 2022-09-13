@@ -20,7 +20,7 @@ const Navigation = () => {
         </Link>
         <div className="nav-container">
           <Link className="nav-links" to="/shop">
-            Shop
+            SHOP
           </Link>
           {currentUser ? (
             <span className="nav-links" onClick={singOutHandler}>
