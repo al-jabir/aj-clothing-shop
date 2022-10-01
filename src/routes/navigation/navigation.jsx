@@ -1,17 +1,17 @@
 import { Fragment, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+
 import { ReactComponent as Ajshop } from "../../assets/aj.svg";
+
 import { userContext } from "../../contexts/userContext";
+
 import { signOutUser } from "../../utils/firebase/firebase";
+
 import "./navigation.scss";
 const Navigation = () => {
-  const { currentUser, setCurrentUser } = useContext(userContext);
+  const { currentUser } = useContext(userContext);
   // console.log(currentUser);
 
-  const singOutHandler = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  };
   return (
     <Fragment>
       <div className="navigation">
@@ -23,7 +23,7 @@ const Navigation = () => {
             SHOP
           </Link>
           {currentUser ? (
-            <span className="nav-links" onClick={singOutHandler}>
+            <span className="nav-links" onClick={signOutUser}>
               SIGN OUT
             </span>
           ) : (
