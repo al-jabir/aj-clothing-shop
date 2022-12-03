@@ -4,7 +4,6 @@ import Button from "../button/button";
 import "./product-card.styles.scss";
 
 const ProductCard = ({ product }) => {
-  console.log(product);
   const { name, price, imageUrl } = product;
   return (
     <div className="product-card-container">
