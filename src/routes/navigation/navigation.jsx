@@ -17,8 +17,6 @@ const Navigation = () => {
 
   const { isCartOpen } = useContext(CartContext);
 
-  console.log(isCartOpen);
-
   return (
     <Fragment>
       <div className="navigation">
